@@ -1,0 +1,6 @@
+<div>
+  <button (click)="toggleTable()">{{tableOpen ? "hide " : "show "}}users</button>
+  <div *ngIf="tableOpen">
+    <app-users-table></app-users-table>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<tr class="table-row" >
+  <td class="table-cell">
+    {{data.username}}
+  </td>
+  <td class="table-cell">
+    {{data.privileges}}
+  </td>
+  <td class="table-cell">
+    {{data.description}}
+  </td>
+  <td *ngIf="!header">
+    <button (click)="toggleEdit()">Edit</button>
+  </td>
+</tr>

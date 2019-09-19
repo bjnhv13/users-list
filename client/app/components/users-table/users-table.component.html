@@ -1,0 +1,11 @@
+<table class="users-table">
+  <tbody>
+    <app-display-row [data]="{username:'User Name', privileges:'Privileges', description:'Description'}" [header]="true" [edit]="false"></app-display-row>
+    <span *ngFor="let user of users; let last = last; let i = index">
+      <app-display-row *ngIf="!editIndexes[i]; else editable" (handleToggleEdit)="toggleEdit(i)" [data]="user" [header]="false" [edit]="editIndexes[i]"></app-display-row>
+      <ng-template #editable>
+        <app-edit-row  (handleToggleEdit)="toggleEdit(i, $event)" [data]="user" [edit]="editIndexes[i]"></app-edit-row>
+      </ng-template>
+    </span>
+  </tbody>
+</table>

@@ -1,0 +1,8 @@
+<td class="table-cell" *ngIf="!edit; else editable">
+  {{data}}
+</td>
+<ng-template #editable>
+  <td class="table-cell">
+    <input  placeholder="label" [(ngModel)]="data" (blur)="handleChange($event)">
+  </td>
+</ng-template>
